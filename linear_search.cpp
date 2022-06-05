@@ -1,7 +1,6 @@
 #include<stdio.h>
-#include<conio.h>
 #define MAX_ARRAY 50
-int main(){
+main(){
     int array[MAX_ARRAY],i,size,search_value;
     int found = 0;
     printf("Enter the size of array: \n");
@@ -15,19 +14,14 @@ int main(){
     scanf("%d",&search_value);
     for (i = 0; i < size; i++)
     {
-        if (array[i]==search_value&&i<size)
+        if (array[i]==search_value)
         {
+            printf("The array is found at %d index\n",i);
             found = 1;
             break;
-        }
-        if(i<size)
-        {
-            printf("The array is found at %d index",i);
-        }
-        else
-        printf("The array is not found at array: ");  
+        } 
     }
-    
-    
-    getch();
+        if(i==size)
+        printf("The array is not found at the array: "); 
+
 }
