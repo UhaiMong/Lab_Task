@@ -1,47 +1,39 @@
-#include<stdio.h>
-#include<conio.h>
+#include<bits/stdc++.h>
 #define MAX_ARRAY 50
+using namespace std;
 main()
 {
-    int array[MAX_ARRAY],left,right,mid,search,size,i;
-    printf("Enter the size of array: \n");
-    scanf("%d",&size);
-    printf("Enter the %d elements of array: \n",size);
-    for(i=0;i<size;i++)
+    int array[MAX_ARRAY],right,left,mid,size,data,search_val;
+    cout<<"Enter the size of array: ";
+    cin>>size;
+    cout<<"Enter the data of "<<size<<" elements"<<"\n";
+    for(int i = 0; i<size; i++)
     {
-        scanf("%d",&array[i]);
+        cin>>array[i];
     }
-    printf("Enter the value that you want to search: \n");
-    scanf("%d",&search);
+    cout<<"Enter the value that you want to search: \n";
+    cin>>search_val;
     left = 0;
     right = size-1;
-    while (left<right)
+    while (left<=right)
     {
         mid = (left+right)/2;
-
-        if(array[mid]==search)
+        if(array[mid]<search_val)
         {
-            printf("The item is found at %d index",mid+1);
-            return mid;
+            left = mid+1;
         }
-        else if (array[mid]<search)
+        else if (array[mid]==search_val)
         {
-            left = mid + 1;
+            cout<<"The array "<<search_val<<" is founded at "<<mid+1<<" index"<<"\n";
+            break;
         }
-        else if (array[mid]>search)
-        {
-            right = mid - 1;
-        }
-        
-        else if (left==right)
-        {
-            printf("The item is found at %d index",mid);
-        }
-        else if (left>right)
-        {
-            printf("The entered data %d is no found in this array",search);
-        }  
+        else
+        right = mid-1;
         
     }
-    return -1;   
+    if(left>right)
+    {
+        cout<<"The array is not found!";
+    }
+    
 }
