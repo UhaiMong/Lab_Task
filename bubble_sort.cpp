@@ -6,7 +6,7 @@ main()
     int array[MAX_ARRAY],i,j,size,temp,a;
     cout<<"Enter the size of array: "<<"\n";
     cin>>size;
-    cout<<"Enter the elements of the array: "<<"\n";
+    cout<<"Enter the "<<size<<" elements of the array: "<<"\n";
     for(a=0; a<size; a++)
     {
         cin>>array[a];
@@ -22,13 +22,13 @@ main()
                  array[j + 1] = temp;
             }
         }
-        
+
     }
     cout<<"Sorted array is :"<<"\n";
     for (a = 0; a < size; a++)
     {
         cout<<" "<<array[a];
     }
-    
-    
+
+
 }

@@ -4,17 +4,19 @@ int sequence_sum(int num){
     else
      return sequence_sum(num-1)+num;
 }
-int fact(int num2)
+int fact_function(int n, int fact,int i)
 {
-    if (num2 == 1)
-    return 1;
-    else
-     num2*(num2-1);
-    
+    printf("Enter an integer value to calculate factorial: \n");
+    scanf("%d",&n);
+    for(i = 1; i<=n; i++)
+    {
+        fact = fact * i;
+    }
+
 }
 main()
 {
     printf("The sum is: %d \n",sequence_sum(4));
-    fact(5);
-    printf("The factorial is : %d",fact);
+    fact_function();
+    printf("The factorial is : %d",fact_function(n));
 }
